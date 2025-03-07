@@ -3,7 +3,6 @@ package com.epicjugador.horoscoapp.ui.horoscope
 import androidx.lifecycle.ViewModel
 import com.epicjugador.horoscoapp.data.providers.HoroscopeProvider
 import com.epicjugador.horoscoapp.domain.model.HoroscopeInfo
-import com.epicjugador.horoscoapp.domain.model.HoroscopeInfo.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

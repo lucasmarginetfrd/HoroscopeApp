@@ -6,22 +6,24 @@ import androidx.recyclerview.widget.RecyclerView
 import com.epicjugador.horoscoapp.databinding.ItemHoroscopeBinding
 import com.epicjugador.horoscoapp.domain.model.HoroscopeInfo
 
-class HoroscopeViewHolder(view: View):RecyclerView.ViewHolder(view) {
+class HoroscopeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemHoroscopeBinding.bind(view)
 
-    fun render(horoscopeInfo: HoroscopeInfo, onItemSelected: (HoroscopeInfo) -> Unit){
+    fun render(horoscopeInfo: HoroscopeInfo, onItemSelected: (HoroscopeInfo) -> Unit) {
         val context = binding.tvHoroscope.context
         binding.ivHoroscope.setImageResource(horoscopeInfo.img)
         binding.tvHoroscope.text = context.getString(horoscopeInfo.name)
 
         binding.parent.setOnClickListener {
-            startRotationAnimation(binding.ivHoroscope, newLambda = {onItemSelected(horoscopeInfo)})
+            startRotationAnimation(
+                binding.ivHoroscope,
+                newLambda = { onItemSelected(horoscopeInfo) })
             //onItemSelected(horoscopeInfo)
         }
     }
 
-    private fun startRotationAnimation(view: View, newLambda:()->Unit)  {
+    private fun startRotationAnimation(view: View, newLambda: () -> Unit) {
         view.animate().apply {
             duration = 500
             interpolator = LinearInterpolator()
