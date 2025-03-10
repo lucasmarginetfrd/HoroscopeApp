@@ -7,8 +7,10 @@ import com.epicjugador.horoscoapp.R
 import com.epicjugador.horoscoapp.domain.model.HoroscopeInfo
 
 
-class HoroscopeAdapter(private var horoscopeList:List<HoroscopeInfo> = emptyList(),
-    private val onItemSelected:(HoroscopeInfo) -> Unit):
+class HoroscopeAdapter(
+    private var horoscopeList: List<HoroscopeInfo> = emptyList(),
+    private val onItemSelected: (HoroscopeInfo) -> Unit
+) :
     RecyclerView.Adapter<HoroscopeViewHolder>() {
 
     fun updateList(list: List<HoroscopeInfo>) {
